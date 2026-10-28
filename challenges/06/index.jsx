@@ -4,7 +4,7 @@ const root = createRoot(document.getElementById('root'))
 
 function Page() {
     return (
-        <div>
+        <>
             <header>
                 <img src="react.webp" alt="react logo" width="40px"/>
             </header>
@@ -20,7 +20,7 @@ function Page() {
             <footer>
                 © 2026 Payema Development. All rights reserved.
             </footer>
-        </div>
+        </>
     )
 }
 
