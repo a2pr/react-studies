@@ -4,13 +4,13 @@ const root = createRoot(document.getElementById('root'))
 
 function HeaderCustom() {
     return (
-        <header>
-            <img src="react.webp" alt="react logo" width="40px"/>
+        <header className="nav-container">
+            <img src="react.webp" alt="react logo" className='logo-img' />
             <nav>
-                <ul>
-                    <li>Pricing</li>
-                    <li>About</li>
-                    <li>Contact</li>
+                <ul className="nav-list">
+                    <li className="nav-list-item">Pricing</li>
+                    <li className="nav-list-item">About</li>
+                    <li className="nav-list-item">Contact</li>
                 </ul>
             </nav>
         </header>
