@@ -1,12 +1,13 @@
-function handleSubmit(event) {
-    event.preventDefault()
-    const formData = new FormData(event.currentTarget)
-    const newIngredient = formData.get('ingredient')
-    console.log(newIngredient)
-}
-
 export default function Main() {
+
     const ingredients = ["Chicken", 'Oregano', 'Tomatoes']
+    function handleSubmit(event) {
+        event.preventDefault()
+        const formData = new FormData(event.currentTarget)
+        const newIngredient = formData.get('ingredient')
+        ingredients.push(newIngredient)
+        console.log(ingredients)
+    }
     let elements = ingredients.map(i => (<li key={i}>{i}</li>))
     return (
         <main>
