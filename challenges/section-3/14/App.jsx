@@ -6,7 +6,9 @@ export default function App() {
     const thingsElements = myFavoriteThings.map(thing => <p key={thing}>{thing}</p>)
 
     function addFavoriteThing() {
-        setMyFavoriteThings((prev) => [...prev, 'test'])
+        setMyFavoriteThings((prev) => [...prev,
+        allFavoriteThings[prev.length]
+        ])
     }
 
     return (
