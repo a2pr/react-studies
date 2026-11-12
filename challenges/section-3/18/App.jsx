@@ -3,12 +3,13 @@ import React from 'react'
 export default function App() {
 
     function signUp(formData) {
-        const email = formData.get('email')
-        const password = formData.get('password')
-        const employmentStatus = formData.get('employmentStatus')
-        const dietaryRestrictions = formData.getAll('dietaryRestrictions')
-        const favColor = formData.getAll('favColor')
-        console.log(email, password, employmentStatus, dietaryRestrictions, favColor)
+        const data = Object.fromEntries(formData)
+        const dietaryData = formData.getAll('dietaryRestrictions')
+        const allData = {
+            ...data,
+            dietaryRestrictions: dietaryData
+        }
+        console.log(allData)
     }
 
     return (
