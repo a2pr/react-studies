@@ -6,7 +6,9 @@ export default function App() {
         const email = formData.get('email')
         const password = formData.get('password')
         const employmentStatus = formData.get('employmentStatus')
-        console.log(email, password, employmentStatus)
+        const dietaryRestrictions = formData.getAll('dietaryRestrictions')
+        const favColor = formData.getAll('favColor')
+        console.log(email, password, employmentStatus, dietaryRestrictions, favColor)
     }
 
     return (
@@ -37,7 +39,29 @@ export default function App() {
                         Fulltime
                     </label>
                 </fieldset>
+                <fieldset>
+                    <legend> Dietary Restrictions:</legend>
+                    <label>
+                        <input type="checkbox" name='dietaryRestrictions' defaultChecked={true} value='gluten'/>
+                        Gluten free
+                    </label>
+                    <label>
+                        <input type="checkbox" name='dietaryRestrictions' value='dairy'/>
+                        Dairy
+                    </label>
+                    <label>
+                        <input type="checkbox" name='dietaryRestrictions' value='vegan'/>
+                        Vegan
+                    </label>
+                </fieldset>
 
+                <label htmlFor="favColor">What is your favorite color ?</label>
+                <select name="favColor" id="favColor" defaultValue='' required>
+                    <option value="" disabled>Choose a color</option>
+                    <option value="red">Red</option>
+                    <option value="orange">Orange</option>
+                    <option value="blue">Blue</option>
+                </select>
                 <button>Submit</button>
             </form>
         </section>
